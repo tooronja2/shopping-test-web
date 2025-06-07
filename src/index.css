@@ -1,0 +1,365 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 15 15 15;
+
+    --card: 255 255 255;
+    --card-foreground: 15 15 15;
+
+    --popover: 255 255 255;
+    --popover-foreground: 15 15 15;
+
+    --primary: 15 15 15;
+    --primary-foreground: 255 255 255;
+
+    --secondary: 248 248 248;
+    --secondary-foreground: 15 15 15;
+
+    --muted: 245 245 245;
+    --muted-foreground: 115 115 115;
+
+    --accent: 220 38 38;
+    --accent-foreground: 255 255 255;
+
+    --destructive: 220 38 38;
+    --destructive-foreground: 255 255 255;
+
+    --border: 230 230 230;
+    --input: 240 240 240;
+    --ring: 15 15 15;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 255 255 255;
+    --sidebar-foreground: 15 15 15;
+    --sidebar-primary: 15 15 15;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 248 248 248;
+    --sidebar-accent-foreground: 15 15 15;
+    --sidebar-border: 230 230 230;
+    --sidebar-ring: 15 15 15;
+
+    /* Elegant color palette inspired by premium brands like Vans */
+    --elegant-red: 220 38 38;
+    --elegant-red-light: 248 113 113;
+    --elegant-red-dark: 153 27 27;
+    --elegant-black: 15 15 15;
+    --elegant-gray: 107 114 128;
+    --elegant-gray-light: 156 163 175;
+    --elegant-gray-dark: 75 85 99;
+    --elegant-white: 255 255 255;
+    --elegant-off-white: 250 250 250;
+    --elegant-border: 229 231 235;
+    --elegant-accent: 107 114 128; /* Using elegant gray instead of yellow */
+  }
+
+  .dark {
+    --background: 15 15 15;
+    --foreground: 255 255 255;
+    --card: 20 20 20;
+    --card-foreground: 255 255 255;
+    --popover: 20 20 20;
+    --popover-foreground: 255 255 255;
+    --primary: 255 255 255;
+    --primary-foreground: 15 15 15;
+    --secondary: 30 30 30;
+    --secondary-foreground: 255 255 255;
+    --muted: 30 30 30;
+    --muted-foreground: 160 160 160;
+    --accent: 30 30 30;
+    --accent-foreground: 255 255 255;
+    --destructive: 185 28 28;
+    --destructive-foreground: 255 255 255;
+    --border: 40 40 40;
+    --input: 40 40 40;
+    --ring: 200 200 200;
+    --sidebar-background: 15 15 15;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 255 255 255;
+    --sidebar-primary-foreground: 15 15 15;
+    --sidebar-accent: 30 30 30;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 40 40 40;
+    --sidebar-ring: 200 200 200;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-light;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.6;
+  }
+}
+
+/* Premium animations and effects */
+@layer utilities {
+  /* Fade in animations with stagger */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  /* Premium stagger delays */
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+  .animate-delay-400 { animation-delay: 0.4s; }
+  .animate-delay-500 { animation-delay: 0.5s; }
+
+  /* Elegant hover effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+  }
+
+  /* Premium parallax effects */
+  .parallax-slow {
+    transform: translateY(var(--scroll-y, 0px));
+  }
+
+  .parallax-fast {
+    transform: translateY(calc(var(--scroll-y, 0px) * 0.3));
+  }
+
+  /* Elegant glass morphism */
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px) saturate(120%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Premium gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, rgb(15, 15, 15) 0%, rgb(220, 38, 38) 50%, rgb(15, 15, 15) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  /* Elegant magnetic button */
+  .magnetic-button {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .magnetic-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(107, 114, 128, 0.1), transparent);
+    transition: left 0.5s ease-in-out;
+  }
+
+  .magnetic-button:hover::before {
+    left: 100%;
+  }
+
+  /* Premium underline effect */
+  .elegant-underline {
+    position: relative;
+  }
+
+  .elegant-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: rgb(220, 38, 38);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateX(-50%);
+  }
+
+  .elegant-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Premium card shadows */
+  .elegant-shadow {
+    box-shadow: 
+      0 1px 3px rgba(0, 0, 0, 0.05),
+      0 4px 12px rgba(0, 0, 0, 0.08),
+      0 16px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .elegant-shadow-hover:hover {
+    box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.08),
+      0 10px 20px rgba(0, 0, 0, 0.12),
+      0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Floating elements - updated to use elegant gray */
+  .float-gentle {
+    animation: floatGentle 6s ease-in-out infinite;
+  }
+
+  .float-elegant {
+    animation: floatElegant 4s ease-in-out infinite;
+  }
+}
+
+/* Premium keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+}
+
+@keyframes floatElegant {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-6px) rotate(-0.3deg); }
+  66% { transform: translateY(-8px) rotate(0.3deg); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Scroll-triggered animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Premium typography */
+.text-elegant {
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.text-elegant-bold {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Custom elegant color utilities */
+.text-elegant-red { color: rgb(220, 38, 38); }
+.text-elegant-black { color: rgb(15, 15, 15); }
+.text-elegant-gray { color: rgb(107, 114, 128); }
+.text-elegant-gray-light { color: rgb(156, 163, 175); }
+.text-elegant-gray-dark { color: rgb(75, 85, 99); }
+.bg-elegant-white { background-color: rgb(255, 255, 255); }
+.bg-elegant-off-white { background-color: rgb(250, 250, 250); }
+.bg-elegant-red { background-color: rgb(220, 38, 38); }
+.bg-elegant-black { background-color: rgb(15, 15, 15); }
+.bg-elegant-gray { background-color: rgb(107, 114, 128); }
+.border-elegant-red { border-color: rgb(220, 38, 38); }
+.border-elegant-border { border-color: rgb(229, 231, 235); }
+.border-elegant-gray { border-color: rgb(107, 114, 128); }
+
+/* Hover states */
+.hover\:text-elegant-red:hover { color: rgb(220, 38, 38); }
+.hover\:bg-elegant-red:hover { background-color: rgb(220, 38, 38); }
+.hover\:border-elegant-red:hover { border-color: rgb(220, 38, 38); }
+.hover\:text-elegant-gray:hover { color: rgb(107, 114, 128); }
+.hover\:bg-elegant-gray:hover { background-color: rgb(107, 114, 128); }
+
+
+/* ===== INICIO: FORZAR CORRECCIÓN DE COLOR DE ACENTO ===== */
+/* Este bloque se agrega para anular cualquier estilo que esté 
+  causando el color amarillo en los componentes de la interfaz.
+*/
+
+/* Para los Checkbox y elementos seleccionados (usados en filtros de Talla y Color) */
+[data-state=checked], [data-state=on] {
+    background-color: hsl(var(--elegant-red)) !important;
+    border-color: hsl(var(--elegant-red)) !important;
+}
+
+[data-state=checked] > svg {
+    color: white !important;
+}
+
+/* Para el rango del Slider (usado en el filtro de Precio) */
+span[data-radix-slider-range] {
+    background-color: hsl(var(--elegant-red)) !important;
+}
+
+/* Para el anillo de enfoque que aparece al hacer clic (focus-ring) */
+*:focus-visible {
+    --tw-ring-color: hsl(var(--elegant-red)) !important;
+    outline-color: hsl(var(--elegant-red)) !important;
+}
+/* ===== FIN: FORZAR CORRECCIÓN DE COLOR DE ACENTO ===== */
