@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -222,14 +221,14 @@
 
   /* Premium card shadows */
   .elegant-shadow {
-    box-shadow: 
+    box-shadow:
       0 1px 3px rgba(0, 0, 0, 0.05),
       0 4px 12px rgba(0, 0, 0, 0.08),
       0 16px 24px rgba(0, 0, 0, 0.1);
   }
 
   .elegant-shadow-hover:hover {
-    box-shadow: 
+    box-shadow:
       0 4px 6px rgba(0, 0, 0, 0.08),
       0 10px 20px rgba(0, 0, 0, 0.12),
       0 20px 40px rgba(0, 0, 0, 0.15);
@@ -335,31 +334,3 @@
 .hover\:border-elegant-red:hover { border-color: rgb(220, 38, 38); }
 .hover\:text-elegant-gray:hover { color: rgb(107, 114, 128); }
 .hover\:bg-elegant-gray:hover { background-color: rgb(107, 114, 128); }
-
-
-/* ===== INICIO: FORZAR CORRECCIÓN DE COLOR DE ACENTO ===== */
-/* Este bloque se agrega para anular cualquier estilo que esté 
-  causando el color amarillo en los componentes de la interfaz.
-*/
-
-/* Para los Checkbox y elementos seleccionados (usados en filtros de Talla y Color) */
-[data-state=checked], [data-state=on] {
-    background-color: hsl(var(--elegant-red)) !important;
-    border-color: hsl(var(--elegant-red)) !important;
-}
-
-[data-state=checked] > svg {
-    color: white !important;
-}
-
-/* Para el rango del Slider (usado en el filtro de Precio) */
-span[data-radix-slider-range] {
-    background-color: hsl(var(--elegant-red)) !important;
-}
-
-/* Para el anillo de enfoque que aparece al hacer clic (focus-ring) */
-*:focus-visible {
-    --tw-ring-color: hsl(var(--elegant-red)) !important;
-    outline-color: hsl(var(--elegant-red)) !important;
-}
-/* ===== FIN: FORZAR CORRECCIÓN DE COLOR DE ACENTO ===== */
