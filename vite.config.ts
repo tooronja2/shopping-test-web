@@ -18,6 +18,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    // ===== RECTIFICACIÓN CLAVE AQUÍ =====
     // La siguiente línea fue desactivada para eliminar el resaltado amarillo de desarrollo.
     // mode === 'development' && componentTagger(),
   ].filter(Boolean),
